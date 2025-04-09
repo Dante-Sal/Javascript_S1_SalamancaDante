@@ -1,38 +1,38 @@
 export function ShowLoginMenu() {
-    let loginopt = prompt('\n////////////////////////////\n' +
+    let loginOpt = prompt('\n////////////////////////////\n' +
         '// MENÚ DE INGRESO //\n' +
         '////////////////////////////\n\n' +
         '1. Iniciar como camper\n' +
         '2. Iniciar como trainer\n' +
         '3. Iniciar como coordinador\n' +
         '4. Salir del programa\n');
-    return loginopt;
+    return loginOpt;
 };
 export function ShowCamperMenu() {
-    let camperopt = prompt('\n///////////////////////////\n' +
+    let camperOpt = prompt('\n///////////////////////////\n' +
         '// MENÚ DE CAMPER //\n' +
         '///////////////////////////\n\n' +
         '1. Inscribirse\n' +
         '2. Salir del programa\n');
-    return camperopt;
+    return camperOpt;
 };
 export function ShowCamperRegistrationMenu() {
-    let camperregistrationopt = prompt('\n1. Inscribirse como usuario nuevo\n' +
+    let camperRegistrationOpt = prompt('\n1. Inscribirse como usuario nuevo\n' +
         '2. Continuar con una inscripción en progreso\n' +
         '3. Salir del programa\n');
-    return camperregistrationopt;
+    return camperRegistrationOpt;
 }
 export function ShowTrainerMenu() {
-    let traineropt = prompt('\n///////////////////////////\n' +
+    let trainerOpt = prompt('\n///////////////////////////\n' +
         '// MENÚ DE TRAINER //\n' +
         '///////////////////////////\n\n' +
         '1. Ver campers/trainers\n' +
         '2. Asignar notas\n' +
         '3. Salir del programa\n');
-    return traineropt;
+    return trainerOpt;
 };
 export function ShowCoordinatorMenu() {
-    let coordinatoropt = prompt('\n///////////////////////////////////\n' +
+    let coordinatorOpt = prompt('\n///////////////////////////////////\n' +
         '// MENÚ DE COORDINADOR //\n' +
         '///////////////////////////////////\n\n' +
         '1. Asignar notas\n' +
@@ -40,10 +40,10 @@ export function ShowCoordinatorMenu() {
         '3. Abrir menú de funciones CRUD (Create / Read / Update / Delete)\n' +
         '4. Acceder al módulo de reportes\n' +
         '5. Salir del programa\n');
-    return coordinatoropt;
+    return coordinatorOpt;
 };
 export function ShowCRUDMenu() {
-    let crudopt = prompt('\n//////////////////////////////////////\n' +
+    let crudOpt = prompt('\n//////////////////////////////////////\n' +
         '// MENÚ DE FUNCIONES CRUD //\n' +
         '//////////////////////////////////////\n\n' +
         '1. Ver campers/trainers\n' +
@@ -52,5 +52,17 @@ export function ShowCRUDMenu() {
         '4. Eliminar camper/trainer\n' +
         '5. Agregar ruta de entrenamiento\n' +
         '6. Salir del programa\n');
-    return crudopt;
+    return crudOpt;
+};
+export function ShowReadMenu() {
+    let readOpt = prompt('\n1. Ver campers\n' +
+        '2. Ver trainers\n' +
+        '3. Salir del programa\n');
+    return readOpt;
+};
+export function ShowReadCamperMenu() {
+    let readCamperOpt = prompt('\n1. Buscar un camper según su ID\n' +
+        '2. Mostrar los campers cursando en un grupo\n' +
+        '3. Salir del programa\n');
+    return readCamperOpt;
 };
