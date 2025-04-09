@@ -1,3 +1,28 @@
-import { ShowLoginMenu } from "./menu.js";
+import * as menus from "./menus.js";
 
-ShowLoginMenu();
+let r=true;
+while (r==true) {
+    let loginVar=menus.ShowLoginMenu();
+    if (loginVar=='1') {
+        let camperVar=menus.ShowCamperMenu();
+        if (camperVar=='1') {
+            let camperRegistrationVar=menus.ShowCamperRegistrationMenu();
+            if (camperRegistrationVar=='1') {
+                alert('Procesar Camper');
+            } else if (camperRegistrationVar=='2') {
+                alert('Procesar Camper Incompleto');
+            } else if (camperRegistrationVar=='3') {
+                r=false;
+            }
+        }
+    } else if (loginVar=='2') {
+        let trainerVar=menus.ShowTrainerMenu();
+        if (trainerVar=='1') {
+            alert('Ver campers/trainers')
+        }
+    } else if (loginVar=='3') {
+        alert('Coordinador');
+    } else if (loginVar=='4') {
+        r=false;
+    };
+};
