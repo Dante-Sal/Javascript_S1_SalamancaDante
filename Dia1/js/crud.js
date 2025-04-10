@@ -30,5 +30,36 @@ export function Read() {
         } else if (readCamperVar == '3') {
             r = false;
         };
+    } else if (readVar == '2') {
+        let counter = 0;
+        let workTimes = [];
+        for (let t = 0; t < members['trainers'].length; t++) {
+            counter = 0;
+            for (let i = 0; i < members['trainers'][t]['jornadasDisponibles'].length; i++) {
+                if (members['trainers'][t]['jornadasDisponibles'][i] == 0) {
+                    counter += 1;
+                };
+            };
+            if (counter == 4) {
+                alert('\nNombre: ' + members['trainers'][t]['nombres'] + ' ' + members['trainers'][t]['apellidos'] + ' / ID: ' + members['trainers'][t]['id'] + '\n' +
+                    'Jornadas Disponibles: Ninguna\n' +
+                    'Rutas: ' + members['trainers'][t]['rutas'].join(' / ') + '\n\n' +
+                    'Enter (↵) - Avanzar al siguiente trainer...\n');
+            } else {
+                counter = 0;
+                workTimes = [];
+                for (let i = 0; i < members['trainers'][t]['jornadasDisponibles'].length; i++) {
+                    if (members['trainers'][t]['jornadasDisponibles'][i] != 0) {
+                        workTimes.push(members['trainers'][t]['jornadasDisponibles'][i]);
+                    };
+                };
+                alert('\nNombre: ' + members['trainers'][t]['nombres'] + ' ' + members['trainers'][t]['apellidos'] + ' / ID: ' + members['trainers'][t]['id'] + '\n' +
+                    'Jornadas Disponibles: ' + workTimes.join(' / ') + '\n' +
+                    'Rutas: ' + members['trainers'][t]['rutas'].join(' / ') + '\n\n' +
+                    'Enter (↵) - Avanzar al siguiente trainer...\n');
+            }
+        };
+    } else if (readVar == '3') {
+        r = false;
     };
-}
+};
