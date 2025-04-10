@@ -1,5 +1,5 @@
 import { members } from "./database/bbdd_members.js";
-import { roomsGroups } from "./database/bbdd_salones_grupos.js";
+import { roomsGroups } from "./database/bbdd_rooms_groups.js";
 import * as menus from "./menus.js";
 
 export function Read() {

@@ -1,4 +1,5 @@
 import * as menus from './menus.js';
+import * as process from './process_camper.js';
 import * as crud from './crud.js';
 
 let r = true;
@@ -9,7 +10,7 @@ while (r == true) {
         if (camperVar == '1') {
             let camperRegistrationVar = menus.ShowCamperRegistrationMenu();
             if (camperRegistrationVar == '1') {
-                alert('Procesar Camper (Próximamente...)');
+                process.processCamper();
             } else if (camperRegistrationVar == '2') {
                 alert('Procesar Camper Incompleto (Próximamente...)');
             } else if (camperRegistrationVar == '3') {
