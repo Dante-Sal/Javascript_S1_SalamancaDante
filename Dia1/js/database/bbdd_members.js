@@ -1,5 +1,5 @@
 // ################################################
-//      Actividad: Python a Javascript | Día 1
+// ---  Actividad: Python a Javascript | Día 1  ---
 // ################################################
 
 export let members = {

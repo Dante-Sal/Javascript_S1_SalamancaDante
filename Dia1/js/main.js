@@ -1,5 +1,5 @@
 // ################################################
-//      Actividad: Python a Javascript | Día 1
+// ---  Actividad: Python a Javascript | Día 1  ---
 // ################################################
 
 import * as menus from './menus.js';
@@ -19,9 +19,13 @@ while (r == true) {
                 alert('Procesar Camper Incompleto (Próximamente...)');
             } else if (camperRegistrationVar == '3') {
                 r = false;
+            } else {
+                alert('ERR0R: Opción seleccionada no válida...')
             };
         } else if (camperVar == '2') {
             r = false;
+        } else {
+            alert('ERR0R: Opción seleccionada no válida...')
         };
     } else if (loginVar == '2') {
         let trainerVar = menus.ShowTrainerMenu();
@@ -31,11 +35,15 @@ while (r == true) {
             alert('Asignar Notas (Próximamente...)');
         } else if (trainerVar == '3') {
             r = false;
+        } else {
+            alert('ERR0R: Opción seleccionada no válida...')
         };
     } else if (loginVar == '3') {
-        alert('Coordinador (Próximamente...)');
+        let coordinatorVar = menus.ShowCoordinatorMenu();
     } else if (loginVar == '4') {
         r = false;
+    } else {
+        alert('ERR0R: Opción seleccionada no válida...')
     };
 };
 

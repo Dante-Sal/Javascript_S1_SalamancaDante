@@ -1,11 +1,11 @@
 // ################################################
-//      Actividad: Python a Javascript | Día 1
+// ---  Actividad: Python a Javascript | Día 1  ---
 // ################################################
 
 export function ShowLoginMenu() {
-    let loginOpt = prompt('\n////////////////////////////\n' +
-        '// MENÚ DE INGRESO //\n' +
-        '////////////////////////////\n\n' +
+    let loginOpt = prompt('\n##################\n' +
+        '---   MENÚ DE INGRESO   ---\n' +
+        '##################\n\n' +
         '1. Iniciar como camper\n' +
         '2. Iniciar como trainer\n' +
         '3. Iniciar como coordinador\n' +
@@ -13,9 +13,9 @@ export function ShowLoginMenu() {
     return loginOpt;
 };
 export function ShowCamperMenu() {
-    let camperOpt = prompt('\n///////////////////////////\n' +
-        '// MENÚ DE CAMPER //\n' +
-        '///////////////////////////\n\n' +
+    let camperOpt = prompt('\n##################\n' +
+        '---   MENÚ DE CAMPER   ---\n' +
+        '##################\n\n' +
         '1. Inscribirse\n' +
         '2. Salir del programa\n');
     return camperOpt;
@@ -27,18 +27,18 @@ export function ShowCamperRegistrationMenu() {
     return camperRegistrationOpt;
 }
 export function ShowTrainerMenu() {
-    let trainerOpt = prompt('\n///////////////////////////\n' +
-        '// MENÚ DE TRAINER //\n' +
-        '///////////////////////////\n\n' +
+    let trainerOpt = prompt('\n##################\n' +
+        '---   MENÚ DE TRAINER   ---\n' +
+        '##################\n\n' +
         '1. Ver campers/trainers\n' +
         '2. Asignar notas\n' +
         '3. Salir del programa\n');
     return trainerOpt;
 };
 export function ShowCoordinatorMenu() {
-    let coordinatorOpt = prompt('\n///////////////////////////////////\n' +
-        '// MENÚ DE COORDINADOR //\n' +
-        '///////////////////////////////////\n\n' +
+    let coordinatorOpt = prompt('\n######################\n' +
+        '---   MENÚ DE COORDINADOR   ---\n' +
+        '######################\n\n' +
         '1. Asignar notas\n' +
         '2. Asignar grupos\n' +
         '3. Abrir menú de funciones CRUD (Create / Read / Update / Delete)\n' +
@@ -47,9 +47,9 @@ export function ShowCoordinatorMenu() {
     return coordinatorOpt;
 };
 export function ShowCRUDMenu() {
-    let crudOpt = prompt('\n//////////////////////////////////////\n' +
-        '// MENÚ DE FUNCIONES CRUD //\n' +
-        '//////////////////////////////////////\n\n' +
+    let crudOpt = prompt('\n########################\n' +
+        '---   MENÚ DE FUNCIONES CRUD   ---\n' +
+        '########################\n\n' +
         '1. Ver campers/trainers\n' +
         '2. Agregar camper/trainer\n' +
         '3. Editar camper/trainer\n' +

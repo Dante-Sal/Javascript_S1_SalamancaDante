@@ -1,5 +1,5 @@
 // ################################################
-//      Actividad: Python a Javascript | Día 1
+// ---  Actividad: Python a Javascript | Día 1  ---
 // ################################################
 
 import { members } from "./database/bbdd_members.js";
@@ -33,6 +33,8 @@ export function Read() {
             alert('\nCampers del grupo ' + groupName + ':\n\n- ' + groupMembers.join('\n- ') + '\n');
         } else if (readCamperVar == '3') {
             r = false;
+        } else {
+            alert('ERR0R: Opción seleccionada no válida...')
         };
     } else if (readVar == '2') {
         let counter = 0;
@@ -65,6 +67,8 @@ export function Read() {
         };
     } else if (readVar == '3') {
         r = false;
+    } else {
+        alert('ERR0R: Opción seleccionada no válida...')
     };
 };
 
