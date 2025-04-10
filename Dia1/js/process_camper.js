@@ -42,9 +42,19 @@ export function processCamper() {
                         if (newCamper['jornada'] != '' && newCamper['jornada'] != null) {
                             newCamper['estado'] = 'Inscrito';
                             updateInfo(newCamper);
+                        } else {
+                            newCamper['jornada'] = undefined;
                         };
+                    } else {
+                        newCamper['acudiente']['nombres'] = undefined;
+                        newCamper['acudiente']['apellidos'] = undefined;
+                        newCamper['acudiente']['telefono'] = undefined;
                     };
+                } else {
+                    newCamper['telefono'] = undefined;
                 };
+            } else {
+                newCamper['direccion'] = undefined;
             };
         };
     };
