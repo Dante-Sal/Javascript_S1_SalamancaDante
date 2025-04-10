@@ -14,12 +14,12 @@ export function Read() {
             let camperID = parseInt(prompt('ID del camper:'));
             for (let i = 0; i < members['campers'].length; i++) {
                 if (members['campers'][i]['id'] == camperID) {
-                    alert('\nNombre: ' + members['campers'][i]['nombres'] + ' ' + members['campers'][i]['apellidos'] + ' / ID: ' + members['campers'][i]['id'] + '\n' +
-                        'Dirección: ' + members['campers'][i]['direccion'] + ' / Teléfono: ' + members['campers'][i]['telefono'] + '\n' +
-                        'Estado: ' + members['campers'][i]['estado'] + ' / Riesgo: ' + members['campers'][i]['riesgo'] + '\n' +
-                        'Jornada: ' + members['campers'][i]['jornada'] + '\n');
+                    alert(`\nNombre:  ${members['campers'][i]['nombres']} ${members['campers'][i]['apellidos']} / ID: ${members['campers'][i]['id']}\n` +
+                        `Dirección: ${members['campers'][i]['direccion']} / Teléfono: ${members['campers'][i]['telefono']}\n` +
+                        `Estado: ${members['campers'][i]['estado']} / Riesgo: ${members['campers'][i]['riesgo']}\n` +
+                        `Jornada: ${members['campers'][i]['jornada']}\n`);
                 };
-            }
+            };
         } else if (readCamperVar == '2') {
             let groups = [];
             let groupMembers = [];

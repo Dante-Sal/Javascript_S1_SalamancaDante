@@ -14,7 +14,7 @@ while (r == true) {
         if (camperVar == '1') {
             let camperRegistrationVar = menus.ShowCamperRegistrationMenu();
             if (camperRegistrationVar == '1') {
-                process.processCamper();
+                process.ProcessCamper();
             } else if (camperRegistrationVar == '2') {
                 alert('Procesar Camper Incompleto (Próximamente...)');
             } else if (camperRegistrationVar == '3') {
