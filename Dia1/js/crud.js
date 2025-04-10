@@ -1,3 +1,7 @@
+// ################################################
+//      Actividad: Python a Javascript | Día 1
+// ################################################
+
 import { members } from "./database/bbdd_members.js";
 import { roomsGroups } from "./database/bbdd_rooms_groups.js";
 import * as menus from "./menus.js";
@@ -63,3 +67,5 @@ export function Read() {
         r = false;
     };
 };
+
+//Desarrollado por : Simón Dante Salamanca Galvis - 1.097.498.423.

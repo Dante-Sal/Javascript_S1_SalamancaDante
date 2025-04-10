@@ -1,3 +1,7 @@
+// ################################################
+//      Actividad: Python a Javascript | Día 1
+// ################################################
+
 import * as menus from './menus.js';
 import * as process from './process_camper.js';
 import * as crud from './crud.js';
@@ -34,3 +38,5 @@ while (r == true) {
         r = false;
     };
 };
+
+//Desarrollado por : Simón Dante Salamanca Galvis - 1.097.498.423.

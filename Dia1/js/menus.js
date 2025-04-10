@@ -1,3 +1,7 @@
+// ################################################
+//      Actividad: Python a Javascript | Día 1
+// ################################################
+
 export function ShowLoginMenu() {
     let loginOpt = prompt('\n////////////////////////////\n' +
         '// MENÚ DE INGRESO //\n' +
@@ -66,3 +70,5 @@ export function ShowReadCamperMenu() {
         '3. Salir del programa\n');
     return readCamperOpt;
 };
+
+//Desarrollado por : Simón Dante Salamanca Galvis - 1.097.498.423.

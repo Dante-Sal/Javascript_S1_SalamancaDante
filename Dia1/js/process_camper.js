@@ -1,3 +1,7 @@
+// ################################################
+//      Actividad: Python a Javascript | Día 1
+// ################################################
+
 import { members } from "./database/bbdd_members.js";
 
 function updateInfo(newCamper) {
@@ -6,7 +10,7 @@ function updateInfo(newCamper) {
 };
 export function processCamper() {
     let newCamper = {};
-    let id = members['campers'][-1]['id'];
+    let id = members['campers'].at(-1)['id'];
     newCamper['id'] = id + 1;
     newCamper['estado'] = '';
     newCamper['riesgo'] = 'Bajo';
@@ -31,3 +35,5 @@ export function processCamper() {
     newCamper['estado'] = 'Inscrito';
     updateInfo(newCamper);
 };
+
+//Desarrollado por : Simón Dante Salamanca Galvis - 1.097.498.423.

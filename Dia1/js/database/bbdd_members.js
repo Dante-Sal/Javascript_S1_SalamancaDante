@@ -1,3 +1,7 @@
+// ################################################
+//      Actividad: Python a Javascript | Día 1
+// ################################################
+
 export let members = {
     'trainers': [
         {
@@ -3147,3 +3151,5 @@ export let members = {
         }
     ]
 };
+
+//Desarrollado por : Simón Dante Salamanca Galvis - 1.097.498.423.

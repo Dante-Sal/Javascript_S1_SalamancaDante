@@ -1,3 +1,7 @@
+// ################################################
+//      Actividad: Python a Javascript | Día 1
+// ################################################
+
 export let roomsGroups = {
     'grupos': {
         'J1': {
@@ -80,3 +84,5 @@ export let roomsGroups = {
         ]
     }
 };
+
+//Desarrollado por : Simón Dante Salamanca Galvis - 1.097.498.423.
