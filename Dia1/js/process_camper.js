@@ -34,7 +34,7 @@ export function ProcessCamper() {
                         newCamper.acudiente.apellidos != '' && newCamper.acudiente.apellidos != null ||
                         newCamper.acudiente.telefono != '' && newCamper.acudiente.telefono != null) {
                         UpdateInfo(newCamper);
-                        newCamper.jornada = prompt('Ingrese la jornada en la que quiera estudiar: \n' +
+                        newCamper.jornada = prompt('Ingrese la jornada en la que desee estudiar: \n' +
                             '1 --- 6 a.m. - 10 a.m.\n' +
                             '2 --- 10 a.m. - 2 p.m.\n' +
                             '3 --- 2 p.m. - 6 p.m.\n' +
@@ -74,7 +74,7 @@ function FromAddress(incompleteCamper) {
                 incompleteCamper.acudiente.apellidos != '' && incompleteCamper.acudiente.apellidos != null ||
                 incompleteCamper.acudiente.telefono != '' && incompleteCamper.acudiente.telefono != null) {
                 UpdateInfo(incompleteCamper);
-                incompleteCamper.jornada = prompt('Ingrese la jornada en la que quiera estudiar: \n' +
+                incompleteCamper.jornada = prompt('Ingrese la jornada en la que desee estudiar: \n' +
                     '1 --- 6 a.m. - 10 a.m.\n' +
                     '2 --- 10 a.m. - 2 p.m.\n' +
                     '3 --- 2 p.m. - 6 p.m.\n' +
@@ -109,7 +109,7 @@ function FromTelephone(incompleteCamper) {
             incompleteCamper.acudiente.apellidos != '' && incompleteCamper.acudiente.apellidos != null ||
             incompleteCamper.acudiente.telefono != '' && incompleteCamper.acudiente.telefono != null) {
             UpdateInfo(incompleteCamper);
-            incompleteCamper.jornada = prompt('Ingrese la jornada en la que quiera estudiar: \n' +
+            incompleteCamper.jornada = prompt('Ingrese la jornada en la que desee estudiar: \n' +
                 '1 --- 6 a.m. - 10 a.m.\n' +
                 '2 --- 10 a.m. - 2 p.m.\n' +
                 '3 --- 2 p.m. - 6 p.m.\n' +
@@ -138,7 +138,7 @@ function FromAttendant(incompleteCamper) {
         incompleteCamper.acudiente.apellidos != '' && incompleteCamper.acudiente.apellidos != null ||
         incompleteCamper.acudiente.telefono != '' && incompleteCamper.acudiente.telefono != null) {
         UpdateInfo(incompleteCamper);
-        incompleteCamper.jornada = prompt('Ingrese la jornada en la que quiera estudiar: \n' +
+        incompleteCamper.jornada = prompt('Ingrese la jornada en la que desee estudiar: \n' +
             '1 --- 6 a.m. - 10 a.m.\n' +
             '2 --- 10 a.m. - 2 p.m.\n' +
             '3 --- 2 p.m. - 6 p.m.\n' +
@@ -156,7 +156,7 @@ function FromAttendant(incompleteCamper) {
     };
 };
 function FromStudyTime(incompleteCamper) {
-    incompleteCamper.jornada = prompt('Ingrese la jornada en la que quiera estudiar: \n' +
+    incompleteCamper.jornada = prompt('Ingrese la jornada en la que desee estudiar: \n' +
         '1 --- 6 a.m. - 10 a.m.\n' +
         '2 --- 10 a.m. - 2 p.m.\n' +
         '3 --- 2 p.m. - 6 p.m.\n' +
@@ -169,7 +169,7 @@ function FromStudyTime(incompleteCamper) {
     };
 };
 export function ProcessIncompleteCamper() {
-    let files = `\nEscriba el número de la inscripción incompleta que desee llenar:\n\n`;
+    let files = `\nIngrese el número del archivo de inscripción incompleto que desee continuar:\n\n`;
     for (let i = 0; i < members.campers.length; i++) {
         if (members.campers[i].estado == 'En proceso de ingreso') {
             files = files.concat(`↳ Archivo de inscripción incompleto #${i + 1}: ${members.campers[i].nombres} ${members.campers[i].apellidos}\n`);

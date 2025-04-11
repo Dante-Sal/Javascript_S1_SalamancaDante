@@ -40,10 +40,10 @@ while (r == true) {
             alert('ERR0R: Opción seleccionada no válida...');
         };
     } else if (loginVar == '3') {
-        if (cFunctions.CoordinatorLogin()) {
+        if (cFunctions.Login()) {
             let coordinatorVar = menus.ShowCoordinatorMenu();
             if (coordinatorVar == '1') {
-                alert('Asignar Notas (Próximamente...)');
+                cFunctions.GradeAssignment();
             } else if (coordinatorVar == '2') {
                 alert('Asignar Grupos (Próximamente...)');
             } else if (coordinatorVar == '3') {
