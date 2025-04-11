@@ -16,7 +16,7 @@ while (r == true) {
             if (camperRegistrationVar == '1') {
                 process.ProcessCamper();
             } else if (camperRegistrationVar == '2') {
-                alert('Procesar Camper Incompleto (Próximamente...)');
+                process.ProcessIncompleteCamper();
             } else if (camperRegistrationVar == '3') {
                 r = false;
             } else {
