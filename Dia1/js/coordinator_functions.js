@@ -30,7 +30,7 @@ export function GradeAssignment() {
         let grade = prompt(`Escriba la nota a asignar al camper #${members.campers[registeredCamperVar-1].id} (${members.campers[registeredCamperVar-1].nombres} ${members.campers[registeredCamperVar-1].apellidos}):`);
         if (grade != '') {
             if (grade >= 60) {
-                members.campers[i].estado = 'Aprobado'
+                members.campers[registeredCamperVar-1].estado = 'Aprobado';
                 alert(`Camper ${members.campers[registeredCamperVar-1].nombres} ${members.campers[registeredCamperVar-1].apellidos} aprobado`);
             } else {
                 alert(`Camper ${members.campers[registeredCamperVar-1].nombres} ${members.campers[registeredCamperVar-1].apellidos} no aprobado`);
