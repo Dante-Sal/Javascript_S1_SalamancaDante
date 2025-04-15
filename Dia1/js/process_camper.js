@@ -9,7 +9,7 @@ function UpdateInfo(camper) {
     members.campers.push(camper);
 };
 export function ProcessCamper() {
-    let newCamper = {};
+    let newCamper = new Object();
     let id = members.campers.at(-1).id;
     newCamper.id = id + 1;
     newCamper.estado = '';
@@ -26,7 +26,7 @@ export function ProcessCamper() {
                 newCamper.telefono = prompt('Ingrese su número de teléfono: ');
                 if (newCamper.telefono != '' && newCamper.telefono != null) {
                     UpdateInfo(newCamper);
-                    newCamper.acudiente = {};
+                    newCamper.acudiente = new Object();
                     newCamper.acudiente.nombres = prompt('Ingrese el/los nombre/s del acudiente: ');
                     newCamper.acudiente.apellidos = prompt('Ingrese los apellidos del acudiente: ');
                     newCamper.acudiente.telefono = prompt('Ingrese el número de teléfono del acudiente: ');
@@ -66,7 +66,7 @@ function FromAddress(incompleteCamper) {
         incompleteCamper.telefono = prompt('Ingrese su número de teléfono: ');
         if (incompleteCamper.telefono != '' && incompleteCamper.telefono != null) {
             UpdateInfo(incompleteCamper);
-            incompleteCamper.acudiente = {};
+            incompleteCamper.acudiente = new Object();
             incompleteCamper.acudiente.nombres = prompt('Ingrese el/los nombre/s del acudiente: ');
             incompleteCamper.acudiente.apellidos = prompt('Ingrese los apellidos del acudiente: ');
             incompleteCamper.acudiente.telefono = prompt('Ingrese el número de teléfono del acudiente: ');
@@ -101,7 +101,7 @@ function FromTelephone(incompleteCamper) {
     incompleteCamper.telefono = prompt('Ingrese su número de teléfono: ');
     if (incompleteCamper.telefono != '' && incompleteCamper.telefono != null) {
         UpdateInfo(incompleteCamper);
-        incompleteCamper.acudiente = {};
+        incompleteCamper.acudiente = new Object();
         incompleteCamper.acudiente.nombres = prompt('Ingrese el/los nombre/s del acudiente: ');
         incompleteCamper.acudiente.apellidos = prompt('Ingrese los apellidos del acudiente: ');
         incompleteCamper.acudiente.telefono = prompt('Ingrese el número de teléfono del acudiente: ');
@@ -130,7 +130,7 @@ function FromTelephone(incompleteCamper) {
     };
 };
 function FromAttendant(incompleteCamper) {
-    incompleteCamper.acudiente = {};
+    incompleteCamper.acudiente = new Object();
     incompleteCamper.acudiente.nombres = prompt('Ingrese el/los nombre/s del acudiente: ');
     incompleteCamper.acudiente.apellidos = prompt('Ingrese los apellidos del acudiente: ');
     incompleteCamper.acudiente.telefono = prompt('Ingrese el número de teléfono del acudiente: ');
