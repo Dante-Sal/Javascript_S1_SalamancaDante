@@ -140,7 +140,7 @@ body {
 
 #container #container__img img {
     position: absolute;
-    top: 33%;
+    top: 31%;
     left: 33%;
     width: 4vw;
     user-select: none;
@@ -162,7 +162,7 @@ body {
     color: #a8aeaa;
 }
 
-#container #container__img form input {
+#container #container__img form input[name="search"] {
     position: absolute;
     top: 66%;
     left: 9.3%;
@@ -172,6 +172,32 @@ body {
     color: #464749;
     font-size: 0.65vw;
     font-weight: 600;
-    border-radius: 0.3vw;
-    border: 0;
+    border: 0.1vw solid #222222;
+    border-radius: 0.2vw;
+}
+
+#container #container__img form input[name="search"]:focus {
+    outline-width: 0;
+}
+
+#container #container__img form button {
+    position: absolute;
+    top: 85.5%;
+    padding: 0.5vw;
+    width: 5.8vw;
+    height: 2vw;
+    background-color: #453e3f;
+    color: #ffffff;
+    font-size: 0.65vw;
+    font-weight: 600;
+    border: 0.1vw solid #222222;
+    border-radius: 0.2vw;
+}
+
+#container #container__img form #prev {
+    left: 9.3%;
+}
+
+#container #container__img form #next {
+    left: 47%;
 }
