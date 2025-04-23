@@ -2,7 +2,7 @@ function Display(data) {
     let informacionHTML = document.getElementById('container__img');
     if (data["sprites"]["versions"]["generation-v"]["black-white"]["animated"]["front_default"] == undefined) {
         informacionHTML.innerHTML = `
-            <img src=${data["sprites"]["front_default"]} />
+            <div style="    position: absolute;top: 31%;left: 31%;width: 5vw;height: 5vw;background: url(${data["sprites"]["front_default"]});background-position: 50%;background-size: contain;background-repeat: no-repeat;"></div>
             <p><span class="-${data["id"]}" id="identifier">${data["id"]}</span> <span>-</span> ${data["name"]}</p>
             <form id="searchForm" name="searchForm">
                 <input name="search" type="search" placeholder="Name or Number"/>
@@ -12,7 +12,7 @@ function Display(data) {
             `;
     } else {
         informacionHTML.innerHTML = `
-            <img src=${data["sprites"]["versions"]["generation-v"]["black-white"]["animated"]["front_default"]} />
+            <div style="position: absolute;top: 31%;left: 31%;width: 5vw;height: 5vw;background: url(${data["sprites"]["versions"]["generation-v"]["black-white"]["animated"]["front_default"]});background-position: 50%;background-size: contain;background-repeat: no-repeat;"></div>
             <p><span class="-${data["id"]}" id="identifier">${data["id"]}</span> <span>-</span> ${data["name"]}</p>
             <form id="searchForm" name="searchForm">
                 <input name="search" type="search" placeholder="Name or Number"/>

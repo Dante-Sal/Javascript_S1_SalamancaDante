@@ -138,14 +138,6 @@ body {
     background-repeat: no-repeat;
 }
 
-#container #container__img img {
-    position: absolute;
-    top: 31%;
-    left: 33%;
-    width: 4vw;
-    user-select: none;
-}
-
 #container #container__img p {
     position: absolute;
     top: 55%;
