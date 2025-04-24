@@ -143,8 +143,27 @@ body {
     height: 37.4vmax;
 }
 
+#container #container__auxiliary #container__img img {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 4vw;
+}
+
 #container #container__auxiliary #container__text {
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    width: 15vw;
+    color: #464749;
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-align: right;
     text-transform: capitalize;
+}
+
+#container #container__auxiliary #container__text span {
+    color: #a8aeaa;
 }
 
 #container #container__auxiliary #container__input {
@@ -159,35 +178,10 @@ body {
     font-size: 0.97vmax;
     font-weight: 600;
     border: 0.1vmax solid #222222;
-    border-radius: 0.3vmax;
-}function FETCH_DATA() {
-    let id = document.getElementById('container__input').value;
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', `https://pokeapi.co/api/v2/pokemon/${id}`);
-    xhr.onreadystatechange = (function () {
-        if (this.readyState === 4 && this.status === 200) {
-            let response = JSON.parse(this.responseText);
-            DISPLAY_DATA(response);
-        }
-    });
-    xhr.send();
-
-}
-function DISPLAY_DATA(data) {
-    let text = document.getElementById('container__text');
-    text.innerHTML = `${data['id']} - ${data['name']}`;
-}
-function PREV() {
-    console.log('Testing');
-}
-function NEXT() {
-    console.log('Testing');
+    border-radius: 0.5vmax;
+    box-shadow: -0.3vh 0.5vh 0 #9f9e9ed7,-0.5vh 0.9vh #242424e8;
 }
 
-const input = document.getElementById('container__input');
-input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        FETCH_DATA();
-    }
-});
-
+#container #container__auxiliary #container__input:focus {
+    outline-width: 0;
+}
