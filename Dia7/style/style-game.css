@@ -11,13 +11,26 @@ body {
     align-items: center;
 }
 
-#container button {
-    height: 2vw;
+.subcontainer__card-container {
+    position: relative;
+    margin: 3.4vw 5vw 0;
+    width: 14vw;
+    height: 18.28vw;
 }
 
 .cardReverse {
+    position: absolute;
     width: 11vw;
-    margin: 3vw 5vw;
+}
+
+.card {
+    position: absolute;
+    width: 11vw;
+}
+
+#container-B__btn {
+    position: absolute;
+    width: 7vw;
 }
 
 #closeIcon {
@@ -26,5 +39,7 @@ body {
     margin: 1vw 0.8vw;
     width: 3vw;
     height: 3vw;
+    background-image: url('https://img.icons8.com/ios_filled/512/FFFFFF/delete-sign--v2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-

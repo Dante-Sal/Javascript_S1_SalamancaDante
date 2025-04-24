@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="../style/style-game.css"/>
 </head>
 <body>
-    <div id="container1">
-        <div id="subcontainer1" class="container">
-            <button>Change card</button>
-            <img id="subcontainer1__cardReverse" class="cardReverse" src="https://deckofcardsapi.com/static/img/back.png"/>
+    <div id="container-A">
+        <div id="subcontainer-A" class="container">
+            <button id="subcontainer-A__btn" class="subcontainer__btn">Change card</button>
+            <div id="subcontainer-A__card-container" class="subcontainer__card-container">
+                <img id="subcontainer-A__cardReverse" class="cardReverse" src="https://deckofcardsapi.com/static/img/back.png"/>
+            </div>
         </div>
-        <div id="subcontainer2" class="container">
-            <button>Change card</button>
-            <img id="subcontainer2__cardReverse" class="cardReverse" src="https://deckofcardsapi.com/static/img/back.png"/>
+        <div id="subcontainer-B" class="container">
+            <button id="subcontainer-B__btn" class="subcontainer__btn">Change card</button>
+            <div id="subcontainer-B__card-container" class="subcontainer__card-container">
+                <img id="subcontainer-B__cardReverse" class="cardReverse" src="https://deckofcardsapi.com/static/img/back.png"/>
+            </div>
         </div>
     </div>
-    <div id="container2" class="container">
-        <button>Show cards</button>
+    <div id="container-B" class="container">
+        <button id="container-B__btn">Show cards</button>
     </div>
-    <div id="closeIcon"></div>
+    <a id="closeIcon" href="../index.html"></a>
 </body>
+<script src="../js/main.js"></script>
 </html>
