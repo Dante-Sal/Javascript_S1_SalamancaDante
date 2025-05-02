@@ -4,118 +4,75 @@ const search_input = document.getElementById('search-input');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 
-async function FETCH_FIRST() {
-    const req = {
-        method: "GET"
-    };
-    await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s`, req)
+function FETCH_FIRST() {
+    axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s`)
         .then(response => {
-            if (!response.ok) {
-                DISPLAY_ERROR();
-            } else {
-                return response.json();
-            };
-        })
-        .then(data => {
-            first_ston3_id = parseInt(data[0]['id']);
+            first_ston3_id = parseInt(response.data[0]['id']);
+            console.log(first_ston3_id)
         });
 };
 
-async function FETCH_LAST() {
-    const req = {
-        method: "GET"
-    };
-    await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s`, req)
+function FETCH_LAST() {
+    axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s`)
         .then(response => {
-            if (!response.ok) {
-                DISPLAY_ERROR();
-            } else {
-                return response.json();
-            };
-        })
-        .then(data => {
-            last_ston3_id = parseInt(data[data.length - 1]['id']);
+            last_ston3_id = parseInt(response.data[response.data.length - 1]['id']);
+            console.log(last_ston3_id)
         });
 };
 
-async function FETCH_STON3() {
-    const req = {
-        method: "GET"
-    };
+function FETCH_STON3() {
     const id = document.getElementById('search-input').value;
-    await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${id}`, req)
+    axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${id}`)
         .then(response => {
-            if (!response.ok || id.trim() === '') {
+            if (id.trim() === '') {
                 DISPLAY_ERROR();
             } else {
-                return response.json();
+                DISPLAY_STON3(response.data);
             };
         })
-        .then(data => {
-            DISPLAY_STON3(data);
+        .catch(error => {
+            DISPLAY_ERROR(error);
         });
 };
 
-async function FETCH_PREV_STON3() {
-    const req = {
-        method: "GET"
-    };
+function FETCH_PREV_STON3() {
     const id = parseInt(document.getElementById('ston3-id').innerHTML);
     if (id === first_ston3_id) {
-        await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${last_ston3_id}`, req)
+        axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${last_ston3_id}`)
             .then(response => {
-                if (!response.ok) {
-                    DISPLAY_ERROR();
-                } else {
-                    return response.json();
-                };
+                DISPLAY_STON3(response.data);
             })
-            .then(data => {
-                DISPLAY_STON3(data);
+            .catch(error => {
+                DISPLAY_ERROR(error);
             });
     } else {
-        await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${id - 1}`, req)
+        axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${id - 1}`)
             .then(response => {
-                if (!response.ok) {
-                    DISPLAY_ERROR();
-                } else {
-                    return response.json();
-                };
+                DISPLAY_STON3(response.data);
             })
-            .then(data => {
-                DISPLAY_STON3(data);
+            .catch(error => {
+                DISPLAY_ERROR(error);
             });
     };
 };
 
-async function FETCH_NEXT_STON3() {
-    const req = {
-        method: "GET"
-    };
+function FETCH_NEXT_STON3() {
     const id = parseInt(document.getElementById('ston3-id').innerHTML);
     if (id === last_ston3_id) {
-        await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${first_ston3_id}`, req)
+        axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${first_ston3_id}`)
             .then(response => {
-                if (!response.ok) {
-                    DISPLAY_ERROR();
-                } else {
-                    return response.json();
-                };
+                DISPLAY_STON3(response.data);
             })
-            .then(data => {
-                DISPLAY_STON3(data);
+            .catch(error => {
+                DISPLAY_ERROR(error);
             });
     } else {
-        await fetch(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${id + 1}`, req)
+        axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s/${id + 1}`)
             .then(response => {
-                if (!response.ok) {
-                    DISPLAY_ERROR();
-                } else {
-                    return response.json();
-                };
+                DISPLAY_STON3(response.data);
             })
-            .then(data => {
-                DISPLAY_STON3(data);
+            .catch(error => {
+                DISPLAY_ERROR(error);
             });
     };
 };
@@ -139,7 +96,7 @@ function DISPLAY_STON3(data) {
     ston3_location_found.innerHTML = `<strong>Discovery place:</strong> ${data['location_found']}`;
 };
 
-function DISPLAY_ERROR() {
+function DISPLAY_ERROR(error) {
     const ston3_id = document.getElementById('ston3-id');
     const ston3_name = document.getElementById('ston3-name');
     const ston3_photo = document.getElementById('ston3-photo');
@@ -149,7 +106,7 @@ function DISPLAY_ERROR() {
     const ston3_location_found = document.getElementById('ston3-location-found');
 
     ston3_id.innerHTML = '';
-    ston3_name.innerHTML = '<strong>404:</strong> Not Found <span style="color: #808080; font-size: 15px;">*please try again with another number*</span>';
+    ston3_name.innerHTML = `<strong>[${error}]:</strong> <span style="color: #808080; font-size: 15px;">*please try again with another number*</span>`;
     ston3_photo.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwVLdfpMvz-evdJYxIKdVL9nHYy0DvR2ypB_HCCmpGnuCEhjdkmw8wpOQKfzwjUq1RsJ8YBaBjQmXkdiXzrtl0r53mc__WFatQXkhENzmiow-LYO4pV8Cfhv1r_wuMHKDmWrKMAEgG7t3C1k_m2M81XMJb2v9wdq4nNT_LqbgBICdoK5HubI1cT0LnBnHE/s1600/404.jpeg';
     ston3_photo.removeAttribute('hidden');
     ston3_type.innerHTML = '';
