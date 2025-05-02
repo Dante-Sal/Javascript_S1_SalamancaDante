@@ -8,5 +8,38 @@
 </head>
 <body>
     <h3 id="title">ston3s.com</h3>
+    <a href="../index.html"><button>Back</button></a>
+    <div id="info">
+        <p id="info__to-update-title" style="font-size: 30px;"><strong id="info__to-update-title--ston3-id">ston3 [?id]:</strong> <span id="info__to-update-title--ston3-name">undefined</span></p>
+        <img id="info__to-update-photo" width="230" height="230" style="filter: sepia(100%);" hidden/>
+        <p id="info__updated-type"></p>
+        <p id="info__updated-personality"></p>
+        <p id="info__updated-discovery-date"></p>
+        <p id="info__updated-location-found"></p>
+        <span id="info__line-break"><br/><br/></span>
+    </div>
+    <form id="id-form">
+        <label for="id-form__id">ID:</label>
+        <input id="id-form__id" class="id-form__data" name="id-form__id" type="number" required/><br/><br/>
+        <input id="id-form__submit" class="id-form__data" type="submit" value="Select"><br/><br/><br/><br/>
+    </form>
+    <form id="info-form">
+        <label for="info-form__name">Name:</label>
+        <input id="info-form__name" class="info-form__data" name="info-form__name" type="text" required disabled/><br/><br/>
+        <label for="info-form__type">Type:</label>
+        <input id="info-form__type" class="info-form__data" name="info-form__type" type="text" required disabled/><br/><br/>
+        <label for="info-form__personality">Personality:</label>
+        <input id="info-form__personality" class="info-form__data" name="info-form__personality" type="text" required disabled/><br/><br/>
+        <label for="info-form__discovery-date">Discovery date:</label>
+        <input id="info-form__discovery-date" class="info-form__data" name="info-form__discovery-date" type="date" required disabled/><br/><br/>
+        <label for="info-form__location-found">Discovery place:</label>
+        <input id="info-form__location-found" class="info-form__data" name="info-form__location-found" type="text" required disabled/><br/><br/>
+        <label for="info-form__photo-url">Photo url:</label>
+        <input id="info-form__photo-url" class="info-form__data" name="info-form__photo-url" type="url" required disabled/><br/><br/>
+        <input id="info-form__submit" class="info-form__data" type="submit" value="Edit" disabled>
+        <button class="info-form__data" onclick="window.location.href='../index.html';" disabled>Cancel</button>
+    </form>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../script/u.js"></script>
 </html>

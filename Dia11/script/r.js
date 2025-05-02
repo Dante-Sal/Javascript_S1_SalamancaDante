@@ -8,7 +8,6 @@ function FETCH_FIRST() {
     axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s`)
         .then(response => {
             first_ston3_id = parseInt(response.data[0]['id']);
-            console.log(first_ston3_id)
         });
 };
 
@@ -16,7 +15,6 @@ function FETCH_LAST() {
     axios.get(`https://6812ccc5129f6313e20f8d72.mockapi.io/ston3s`)
         .then(response => {
             last_ston3_id = parseInt(response.data[response.data.length - 1]['id']);
-            console.log(last_ston3_id)
         });
 };
 
