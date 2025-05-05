@@ -10,11 +10,12 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(to right, var(--light-bg-color), var(--deep-bg-color));
+    overflow-x: hidden;
 }
 
 .section-interface {
     position: absolute;
-    top: 0;
+    top: 10vmax;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,7 +66,7 @@ body {
 
 .section-tasks {
     position: absolute;
-    top: 25%;
+    top: 43vmax;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
