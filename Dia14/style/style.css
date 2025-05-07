@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: 1.5vw;
+}
+
+.card {
+    width: 61vw;
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-color: var(--bs-primary);
+}
+
+.card-inner__body-title, .card-inner__body-description, .card-inner__costume-label {
+    color: var(--bs-primary);
+}
+
+#card-inner__costumes-container {
+    justify-self: center;
+    width: 80%;
+}
+
+.card-inner__costume-inputs-container {
+    display: flex;
+}
+
+.card-inner__costume-inputs-container input {
+    margin-right: 1vw;
+}
+
+.card-inner__costume-inputs-container button {
+    margin-left: 1vw;
+}
