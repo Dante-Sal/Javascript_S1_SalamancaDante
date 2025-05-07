@@ -13,10 +13,6 @@ const cancel_btn = document.getElementById('cancel-btn');
 
 let costumes_number = 0;
 let costumes = new Array();
-let costumes_delete_list = new Array();
-let costume_input_value = '';
-let costume_delete_element_input = new Object();
-let costume_delete_element_input_value = '';
 
 async function FETCH_NEW(data) {
     const req = {
@@ -71,15 +67,28 @@ function DISABLE_BUTTONS() {
 
 function ADD_NEW_COSTUME() {
     const costumes_container = document.getElementById('card-inner__costumes-container');
-    costumes_number++;
-    costumes_container.insertAdjacentHTML('beforeend', `
-        <div id="card-inner__costume--${costumes_number}">
-            <label for="costume-name--${costumes_number}" class="form-label card-inner__costume-label">Nombre traje</label>
-            <div class="card-inner__costume-inputs-container">
-                <input type="text" class="form-control" id="costume-name--${costumes_number}" costume-id="${costumes_number}" />
-                <button class="btn btn-danger btn-delete" costume-id="${costumes_number}">-</button>
-            </div>
-        </div>`);
+    if (costumes_container.innerHTML === '') {
+        costumes_number++;
+        costumes_container.insertAdjacentHTML('beforeend', `
+            <div id="card-inner__costume--1" costume-id="1">
+                <label for="costume-name--1" class="form-label card-inner__costume-label">Nombre traje</label>
+                <div class="card-inner__costume-inputs-container">
+                    <input type="text" class="form-control" id="costume-name--1" costume-id="1" />
+                    <button class="btn btn-danger btn-delete" costume-id="1">-</button>
+                </div>
+            </div>`);
+    } else {
+        const costume_last_input_id = parseInt(costumes_container.children[costumes_number - 1].getAttribute('costume-id'));
+        costumes_number++;
+        costumes_container.insertAdjacentHTML('beforeend', `
+            <div id="card-inner__costume--${costume_last_input_id + 1}" costume-id="${costume_last_input_id + 1}">
+                <label for="costume-name--${costume_last_input_id + 1}" class="form-label card-inner__costume-label">Nombre traje</label>
+                <div class="card-inner__costume-inputs-container">
+                    <input type="text" class="form-control" id="costume-name--${costume_last_input_id + 1}" costume-id="${costume_last_input_id + 1}" />
+                    <button class="btn btn-danger btn-delete" costume-id="${costume_last_input_id + 1}">-</button>
+                </div>
+            </div>`);
+    };
     document.querySelectorAll('.btn-delete').forEach(btn => {
         btn.addEventListener('click', DELETE_COSTUME);
     });
@@ -98,17 +107,26 @@ save_btn.addEventListener('click', () => {
     if (character_name_input.value.trim() !== '' && actor_name_input.value.trim() !== ''
         && actor_age_input.value.trim() !== '' && location_input.value.trim() !== ''
         && poster_input.value.trim() !== '' && location_date_input.value.trim() !== '') {
-        for (let i = 0; i < costumes_number; i++) {
-            const costumes_container = document.getElementById('card-inner__costumes-container');
-            costume_input_value = costumes_container.childNodes[i * 2 + 1].childNodes[3].childNodes[1].value;
-            if (costume_input_value.trim() !== '') {
-                costumes.push(costume_input_value);
+        const costumes_container = document.getElementById('card-inner__costumes-container');
+        const costume_last_input_id = parseInt(costumes_container.children[costumes_number - 1].getAttribute('costume-id'));
+        for (let i = 0; i < costume_last_input_id; i++) {
+            const costume_input = document.getElementById(`costume-name--${i + 1}`);
+            if (costume_input !== null) {
+                if (costume_input.value.trim() !== '') {
+                    costumes.push(costume_input.value);
+                };
             };
         };
         if (costumes.length === costumes_number) {
             const new_hero_data = [character_name_input.value, actor_name_input.value, actor_age_input.value, location_input.value, poster_input.value, location_date_input.value, producer_input.value, costumes];
             DISABLE_BUTTONS();
             FETCH_NEW(new_hero_data);
+        } else {
+            const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
         };
+    } else {
+        const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        modal.show();
     };
 });
