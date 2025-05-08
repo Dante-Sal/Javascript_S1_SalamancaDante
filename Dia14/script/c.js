@@ -12,7 +12,7 @@ const save_btn = document.getElementById('save-btn');
 const cancel_btn = document.getElementById('cancel-btn');
 
 let costumes_number = 0;
-let costumes = new Array();
+let costumes = [];
 
 async function FETCH_NEW(data) {
     const req = {
@@ -107,13 +107,15 @@ save_btn.addEventListener('click', () => {
     if (character_name_input.value.trim() !== '' && actor_name_input.value.trim() !== ''
         && actor_age_input.value.trim() !== '' && location_input.value.trim() !== ''
         && poster_input.value.trim() !== '' && location_date_input.value.trim() !== '') {
-        const costumes_container = document.getElementById('card-inner__costumes-container');
-        const costume_last_input_id = parseInt(costumes_container.children[costumes_number - 1].getAttribute('costume-id'));
-        for (let i = 0; i < costume_last_input_id; i++) {
-            const costume_input = document.getElementById(`costume-name--${i + 1}`);
-            if (costume_input !== null) {
-                if (costume_input.value.trim() !== '') {
-                    costumes.push(costume_input.value);
+        if (costumes_number !== 0) {
+            const costumes_container = document.getElementById('card-inner__costumes-container');
+            const costume_last_input_id = parseInt(costumes_container.children[costumes_number - 1].getAttribute('costume-id'));
+            for (let i = 0; i < costume_last_input_id; i++) {
+                const costume_input = document.getElementById(`costume-name--${i + 1}`);
+                if (costume_input !== null) {
+                    if (costume_input.value.trim() !== '') {
+                        costumes.push(costume_input.value);
+                    };
                 };
             };
         };
@@ -122,11 +124,11 @@ save_btn.addEventListener('click', () => {
             DISABLE_BUTTONS();
             FETCH_NEW(new_hero_data);
         } else {
-            const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            const modal = new bootstrap.Modal(document.getElementById('error-modal'));
             modal.show();
         };
     } else {
-        const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        const modal = new bootstrap.Modal(document.getElementById('error-modal'));
         modal.show();
     };
 });
