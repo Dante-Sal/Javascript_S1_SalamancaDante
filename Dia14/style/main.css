@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: 1.5vw;
+    background-color: var(--bs-secondary);
+}
+
+.card {
+    width: 80vw;
+}
+
+.card-inner {
+    width: auto;
+}
+
+.card-header, .card-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card-text, .list-group-item, .card-header-inner {
+    font-size: 0.7vw;
+}
+
+.btn-danger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5vw;
+    height: 1.5vw;
+}

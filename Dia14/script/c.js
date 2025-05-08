@@ -9,7 +9,6 @@ const producer_input = document.getElementById('producer');
 
 const new_btn = document.getElementById('new-btn');
 const save_btn = document.getElementById('save-btn');
-const cancel_btn = document.getElementById('cancel-btn');
 
 let costumes_number = 0;
 let costumes = [];
@@ -44,7 +43,6 @@ function ENABLE_BUTTONS() {
         </div>`;
     new_btn.setAttribute('disabled', 'true');
     save_btn.removeAttribute('disabled');
-    cancel_btn.removeAttribute('disabled');
     const add_costume_btn = document.getElementById('card-inner__body-add-costume-btn');
     add_costume_btn.addEventListener('click', ADD_NEW_COSTUME);
 };
@@ -61,7 +59,6 @@ function DISABLE_BUTTONS() {
     costumes_section.innerHTML = '';
     new_btn.removeAttribute('disabled');
     save_btn.setAttribute('disabled', 'true');
-    cancel_btn.setAttribute('disabled', 'true');
     costumes_number = 0;
 };
 
