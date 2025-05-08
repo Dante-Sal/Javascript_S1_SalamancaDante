@@ -1,4 +1,5 @@
 const rows_container = document.getElementById('rows-container');
+let id = '';
 
 async function FETCH_DATA() {
     const response = await axios.get('https://681ac80317018fe50578b5c6.mockapi.io/superheroes');
@@ -13,9 +14,12 @@ function DISPLAY_DATA(data) {
             <div class="card card-inner">
                 <img src="${data[i].poster}" class="card-img-top" alt="${data[i].character_name} (${data[i].actor_name}) Poster"/>
                 <div class="card-body">
-                    <h6 class="text-center card-name">
-                        <span>${data[i].character_name}</span>
-                        <button class="btn btn-danger">-</button>
+                    <h6 class="card-name">
+                        <strong>${data[i].character_name}</strong>
+                        <div class="d-flex">
+                            <a href="./pages/u.html"><button class="btn btn-primary m-1" hero-id="${data[i].id}">⋆</button></a>
+                            <button class="btn btn-danger mt-1 mb-1" hero-id="${data[i].id}">-</button>
+                        </div>
                     </h6>
                     <p class="card-text">
                         <strong>Actor/Actriz:</strong> ${data[i].actor_name}
@@ -34,9 +38,32 @@ function DISPLAY_DATA(data) {
         </div>`;
         const character_info_container = document.getElementById(`card-inner__info--${data[i].id}`);
         for (let m = 0; m < data[i].costumes.length; m++) {
-            character_info_container.innerHTML += `<li class="list-group-item">${data[i].costumes[m]}</li>`
+            character_info_container.innerHTML += `<li class="list-group-item">${data[i].costumes[m]}</li>`;
         };
     };
+    document.querySelectorAll('.btn-danger').forEach(delete_btn => {
+        delete_btn.addEventListener('click', CHECK_HERO_ELIMINATION);
+    });
+};
+
+function CHECK_HERO_ELIMINATION(event) {
+    FETCH_DATA()
+        .then(data => {
+            id = event.target.getAttribute('hero-id');
+            const modal = new bootstrap.Modal(document.getElementById('verification-modal'));
+            const character_name_container = document.getElementById('verification-modal__character-name');
+            const delete_btn = document.getElementById('verification-modal__delete-btn');
+            character_name_container.innerHTML = data[id - 1].character_name;
+            modal.show();
+            delete_btn.addEventListener('click', () => {
+                DELETE_HERO(id);
+                location.reload();
+            });
+        });
+};
+
+async function DELETE_HERO(id) {
+    await axios.delete(`https://681ac80317018fe50578b5c6.mockapi.io/superheroes/${id}`);
 };
 
 FETCH_DATA()
