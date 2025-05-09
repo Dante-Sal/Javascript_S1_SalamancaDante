@@ -5,6 +5,10 @@ body {
     background-color: var(--bs-secondary);
 }
 
+a {
+    text-decoration: none;
+}
+
 .card {
     width: 80vw;
 }
@@ -28,7 +32,7 @@ body {
     font-size: 0.7vw;
 }
 
-.btn-primary, .btn-danger {
+.row .btn-primary, .btn-danger {
     display: flex;
     justify-content: center;
     align-items: center;

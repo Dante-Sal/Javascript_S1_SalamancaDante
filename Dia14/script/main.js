@@ -53,7 +53,11 @@ function CHECK_HERO_ELIMINATION(event) {
             const modal = new bootstrap.Modal(document.getElementById('verification-modal'));
             const character_name_container = document.getElementById('verification-modal__character-name');
             const delete_btn = document.getElementById('verification-modal__delete-btn');
-            character_name_container.innerHTML = data[id - 1].character_name;
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].id === id) {
+                    character_name_container.innerHTML = data[i].character_name;
+                };
+            };
             modal.show();
             delete_btn.addEventListener('click', () => {
                 DELETE_HERO(id);
