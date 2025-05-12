@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PacoPets - Home</title>
+  <link rel="shortcut icon" href="./storage/img/PacoPets_icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./storage/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home">
+        <img class="navbar-img" src="./storage/img/PacoPets_logo.png" alt="PacoPets" width="90" />
+      </a>
+      <a href="#">
+        <button class="btn btn-primary navbar-favorites" type="button">★</button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex v-form" role="search">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <div class="input-group">
+                <button class="btn btn-primary w-10" type="submit">⌕</button>
+                <input class="form-control type-vertical w-19" type="search" placeholder="Type" aria-label="Search" />
+                <input class="form-control location-vertical w-25" type="search" placeholder="Location"
+                  aria-label="Search" />
+                <input class="form-control name-vertical w-21" type="search" placeholder="Name" aria-label="Search" />
+                <select id="select age-vertical" class="form-select w-25">
+                  <option value="none" selected disabled>Age</option>
+                  <option value="">Any</option>
+                  <option value="Baby">Baby</option>
+                  <option value="Young">Young</option>
+                  <option value="Adult">Adult</option>
+                  <option value="Senior">Senior</option>
+                </select>
+              </div>
+            </li>
+          </ul>
+        </form>
+        <form class="d-flex h-form" role="search">
+          <input class="form-control me-2 type" type="search" aria-label="Search" />
+          <input class="form-control me-2 location" type="search" placeholder="Location" aria-label="Search" />
+          <input class="form-control me-2 name" type="search" aria-label="Search" />
+          <select id="select" class="form-select age">
+            <option value="none" selected disabled>Age</option>
+            <option value="">Any</option>
+            <option value="Baby">Baby</option>
+            <option value="Young">Young</option>
+            <option value="Adult">Adult</option>
+            <option value="Senior">Senior</option>
+          </select>
+          <button class="btn btn-primary search" type="submit"></button>
+        </form>
+        <div class="h-form-favorites">
+          <button class="btn btn-primary favorites"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <h1><strong>PacoPets most <span>POPULAR</span> ones!</strong></h1>
+    <div class="cards-container">
+
+      <!-- <div class="card">
+        <img
+          src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cookie
+            <button class="btn btn-outline-primary">★</button>
+          </h5>
+          <p class="card-text text-body-secondary">(Adult Dog | Mixed Breed)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-body-secondary"><strong>Location:</strong> Dorado, PR</li>
+          <li class="list-group-item text-body-secondary card-published-footer"><small>Published on 2013-10-14</small>
+          </li>
+          <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cookie
+            <button class="btn btn-outline-primary">★</button>
+          </h5>
+          <p class="card-text text-body-secondary">(Adult Dog | Mixed Breed)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-body-secondary"><strong>Location:</strong> Dorado, PR</li>
+          <li class="list-group-item text-body-secondary card-published-footer"><small>Published on 2013-10-14</small>
+          </li>
+          <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cookie
+            <button class="btn btn-outline-primary">★</button>
+          </h5>
+          <p class="card-text text-body-secondary">(Adult Dog | Mixed Breed)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-body-secondary"><strong>Location:</strong> Dorado, PR</li>
+          <li class="list-group-item text-body-secondary card-published-footer"><small>Published on 2013-10-14</small>
+          </li>
+          <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cookie
+            <button class="btn btn-outline-primary">★</button>
+          </h5>
+          <p class="card-text text-body-secondary">(Adult Dog | Mixed Breed)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-body-secondary"><strong>Location:</strong> Dorado, PR</li>
+          <li class="list-group-item text-body-secondary card-published-footer"><small>Published on 2013-10-14</small>
+          </li>
+          <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cookie
+            <button class="btn btn-outline-primary">★</button>
+          </h5>
+          <p class="card-text text-body-secondary">(Adult Dog | Mixed Breed)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-body-secondary"><strong>Location:</strong> Dorado, PR</li>
+          <li class="list-group-item text-body-secondary card-published-footer"><small>Published on 2013-10-14</small>
+          </li>
+          <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cookie
+            <button class="btn btn-outline-primary">★</button>
+          </h5>
+          <p class="card-text text-body-secondary">(Adult Dog | Mixed Breed)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-body-secondary"><strong>Location:</strong> Dorado, PR</li>
+          <li class="list-group-item text-body-secondary card-published-footer"><small>Published on 2013-10-14</small>
+          </li>
+          <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+        </ul>
+      </div> -->
+    </div>
+  </section>
+</body>
+<script src="./storage/bootstrap/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="./js/media-queries_functions.js"></script>
+<script type="module" src="./js/axios-token_functions.js"></script>
+<script type="module" src="./js/axios-fetch_functions.js"></script>
+<script type="module" src="./js/main.js"></script>
+
+</html>
