@@ -38,9 +38,25 @@ export function UPDATE_SEARCH_VALUE(e) {
 
 export function UPDATE_FAVORITES_VALUE(e) {
     if (e.matches) {
+        console.log(e)
+        console.log(e.matches)
         favorites_btn.innerHTML = '★';
     } else {
         favorites_btn.innerHTML = 'My Favorite Pets ★';
+    };
+};
+
+export function SET_CARD_BUTTON_VALUE(e) {
+    const card_btn = document.querySelectorAll('.card-button');
+
+    if (e) {
+        card_btn.forEach(btn => {
+            btn.innerHTML = '+';
+        });
+    } else {
+        card_btn.forEach(btn => {
+            btn.innerHTML = 'KNOW MORE ABOUT THIS PET +';
+        });
     };
 };
 
