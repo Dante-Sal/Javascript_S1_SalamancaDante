@@ -19,7 +19,7 @@ export function DISPLAY_ANIMALS(data) {
                   <li class="list-group-item text-body-secondary"><strong>Location:</strong> ${data.animals[i].contact.address.city}, ${data.animals[i].contact.address.country}</li>
                   <li class="list-group-item text-body-secondary card-published-footer"><small>Published on ${data.animals[i].published_at.slice(0, 10)}</small>
                   </li>
-                  <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+                  <li class="list-group-item card-button"></li>
                 </ul>
             </div>`);
         } else if (data.animals[i].photos.full != undefined) {
@@ -39,7 +39,7 @@ export function DISPLAY_ANIMALS(data) {
                   <li class="list-group-item text-body-secondary"><strong>Location:</strong> ${data.animals[i].contact.address.city}, ${data.animals[i].contact.address.country}</li>
                   <li class="list-group-item text-body-secondary card-published-footer"><small>Published on ${data.animals[i].published_at.slice(0, 10)}</small>
                   </li>
-                  <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+                  <li class="list-group-item card-button"></li>
                 </ul>
             </div>`);
         } else if (data.animals[i].photos[0].large != undefined) {
@@ -59,7 +59,7 @@ export function DISPLAY_ANIMALS(data) {
                   <li class="list-group-item text-body-secondary"><strong>Location:</strong> ${data.animals[i].contact.address.city}, ${data.animals[i].contact.address.country}</li>
                   <li class="list-group-item text-body-secondary card-published-footer"><small>Published on ${data.animals[i].published_at.slice(0, 10)}</small>
                   </li>
-                  <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+                  <li class="list-group-item card-button"></li>
                 </ul>
             </div>`);
         } else if (data.animals[i].photos[0].medium != undefined) {
@@ -79,7 +79,7 @@ export function DISPLAY_ANIMALS(data) {
                   <li class="list-group-item text-body-secondary"><strong>Location:</strong> ${data.animals[i].contact.address.city}, ${data.animals[i].contact.address.country}</li>
                   <li class="list-group-item text-body-secondary card-published-footer"><small>Published on ${data.animals[i].published_at.slice(0, 10)}</small>
                   </li>
-                  <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+                  <li class="list-group-item card-button"></li>
                 </ul>
             </div>`);
         } else if (data.animals[i].photos[0].small != undefined) {
@@ -99,7 +99,7 @@ export function DISPLAY_ANIMALS(data) {
                   <li class="list-group-item text-body-secondary"><strong>Location:</strong> ${data.animals[i].contact.address.city}, ${data.animals[i].contact.address.country}</li>
                   <li class="list-group-item text-body-secondary card-published-footer"><small>Published on ${data.animals[i].published_at.slice(0, 10)}</small>
                   </li>
-                  <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+                  <li class="list-group-item card-button"></li>
                 </ul>
             </div>`);
         }
