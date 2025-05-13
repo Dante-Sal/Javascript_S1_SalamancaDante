@@ -1,22 +1,22 @@
-export const type_input = document.querySelector('.type');
-export const type_media_query = window.matchMedia('(max-width: 1088px)');
+export const type_input = document.querySelector('.type-default-option');
+export const type_media_query = window.matchMedia('(max-width: 1078px)');
 
 export const name_input = document.querySelector('.name');
 export const name_media_query = window.matchMedia('(max-width: 822px)');
 
 export const search_btn = document.querySelector('.search');
-export const search_media_query = window.matchMedia('(max-width: 791px)');
+export const search_media_query = window.matchMedia('(max-width: 810px)');
 
 export const favorites_btn = document.querySelector('.favorites');
-export const favorites_media_query = window.matchMedia('(max-width: 719px)');
+export const favorites_media_query = window.matchMedia('(max-width: 764px)');
 
 export const card_media_query = window.matchMedia('(max-width: 393px)');
 
 export function UPDATE_TYPE_PLACEHOLDER(e) {
     if (e.matches) {
-        type_input.placeholder = 'Type';
+        type_input.innerHTML = 'Type';
     } else {
-        type_input.placeholder = 'Type of pet';
+        type_input.innerHTML = 'Type of pet';
     };
 };
 

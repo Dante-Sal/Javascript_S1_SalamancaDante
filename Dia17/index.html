@@ -29,12 +29,22 @@
             <li class="nav-item">
               <div class="input-group">
                 <button class="btn btn-primary w-10" type="submit">⌕</button>
-                <input class="form-control type-vertical w-19" type="search" placeholder="Type" aria-label="Search" />
-                <input class="form-control location-vertical w-25" type="search" placeholder="Location"
-                  aria-label="Search" />
-                <input class="form-control name-vertical w-21" type="search" placeholder="Name" aria-label="Search" />
-                <select id="select age-vertical" class="form-select w-25">
-                  <option value="none" selected disabled>Age</option>
+                <select class="form-select type-vertical w-21" name="type">
+                  <option class="type-default-option" value="" selected disabled>Type of pet</option>
+                  <option value="">Any</option>
+                  <option value="type=dog">Dog</option>
+                  <option value="type=cat">Cat</option>
+                  <option value="type=rabbit">Rabbit</option>
+                  <option value="type=small%20%26%20furry">Small & Furry</option>
+                  <option value="type=horse">Horse</option>
+                  <option value="type=bird">Bird</option>
+                  <option value="type=scales,%20fins%20%26%20other">Scales, Fins & Other</option>
+                  <option value="type=barnyard">Barnyard</option>
+                </select>
+                <input class="form-control location-vertical w-25" name="location" type="search" placeholder="Location" aria-label="Search" />
+                <input class="form-control name-vertical w-20" name="name" type="search" placeholder="Name" aria-label="Search" />
+                <select id="select age-vertical" class="form-select w-24" name="age">
+                  <option value="" selected disabled>Age</option>
                   <option value="">Any</option>
                   <option value="Baby">Baby</option>
                   <option value="Young">Young</option>
@@ -46,16 +56,27 @@
           </ul>
         </form>
         <form class="d-flex h-form" role="search">
-          <input class="form-control me-2 type" type="search" aria-label="Search" />
-          <input class="form-control me-2 location" type="search" placeholder="Location" aria-label="Search" />
-          <input class="form-control me-2 name" type="search" aria-label="Search" />
-          <select id="select" class="form-select age">
-            <option value="none" selected disabled>Age</option>
+          <select class="form-select type" name="type">
+            <option class="type-default-option" value="" selected disabled>Type of pet</option>
             <option value="">Any</option>
-            <option value="Baby">Baby</option>
-            <option value="Young">Young</option>
-            <option value="Adult">Adult</option>
-            <option value="Senior">Senior</option>
+            <option value="type=dog">Dog</option>
+            <option value="type=cat">Cat</option>
+            <option value="type=rabbit">Rabbit</option>
+            <option value="type=small%20%26%20furry">Small & Furry</option>
+            <option value="type=horse">Horse</option>
+            <option value="type=bird">Bird</option>
+            <option value="type=scales,%20fins%20%26%20other">Scales, Fins & Other</option>
+            <option value="type=barnyard">Barnyard</option>
+          </select>
+          <input class="form-control me-2 location" name="location" type="search" placeholder="Location" aria-label="Search" />
+          <input class="form-control me-2 name" name="name" type="search" aria-label="Search" />
+          <select id="select" class="form-select age" name="age">
+            <option value="" selected disabled>Age</option>
+            <option value="">Any</option>
+            <option value="baby">Baby</option>
+            <option value="young">Young</option>
+            <option value="adult">Adult</option>
+            <option value="senior">Senior</option>
           </select>
           <button class="btn btn-primary search" type="submit"></button>
         </form>
