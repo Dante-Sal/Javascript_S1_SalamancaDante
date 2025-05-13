@@ -41,8 +41,10 @@
                   <option value="type=scales%2c%20fins%20%26%20other">Scales, Fins & Other</option>
                   <option value="type=barnyard">Barnyard</option>
                 </select>
-                <input class="form-control location-vertical w-25" name="location" type="search" placeholder="Location" aria-label="Search" />
-                <input class="form-control name-vertical w-20" name="name" type="search" placeholder="Name" aria-label="Search" />
+                <input class="form-control location-vertical w-25" name="location" type="search" placeholder="Location"
+                  aria-label="Search" />
+                <input class="form-control name-vertical w-20" name="name" type="search" placeholder="Name"
+                  aria-label="Search" />
                 <select id="v-form-select-age" class="form-select age-vertical w-24" name="age">
                   <option value="" selected disabled>Age</option>
                   <option value="">Any</option>
@@ -68,7 +70,8 @@
             <option value="type=scales%2c%20fins%20%26%20other">Scales, Fins & Other</option>
             <option value="type=barnyard">Barnyard</option>
           </select>
-          <input class="form-control me-2 location" name="location" type="search" placeholder="Location" aria-label="Search" />
+          <input class="form-control me-2 location" name="location" type="search" placeholder="Location"
+            aria-label="Search" />
           <input class="form-control me-2 name" name="name" type="search" aria-label="Search" />
           <select id="h-form-select-age" class="form-select age" name="age">
             <option value="" selected disabled>Age</option>
@@ -87,10 +90,10 @@
     </div>
   </nav>
   <section>
-    <h1 id="title"><strong>PacoPets most <span>POPULAR</span> ones!</strong></h1>
-    <div class="cards-container">
+    <!-- <h1 id="title"><strong>PacoPets most <span>POPULAR</span> ones!</strong></h1>
+    <div class="cards-container"> -->
 
-      <!-- <div class="card">
+    <!-- <div class="card">
         <img
           src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720"
           class="card-img-top" alt="...">
@@ -202,11 +205,45 @@
           </li>
           <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
         </ul>
-      </div> -->
-    </div>
+      </div> 
+    </div>-->
 
     <div class="details-container">
-      
+      <h1 id="details-title">
+        <strong>Meet <span>COOKIE</span>!</strong>
+        <div>
+          <button class="btn btn-outline-primary details-favorite">★</button>
+          <button class="btn btn-primary details-contact">✆</button>
+        </div>
+      </h1>
+
+      <div id="images-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block carousel-image"
+              src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/34d19d05-e975-417c-8491-a7e626b40ed9.jpg?versionId=JCV.bXSxaCpN2Un_dz4UpRA_DhSYI9qL&bust=1746043996&width=720" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block carousel-image" src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/b01f0ba3-2864-4b65-83f5-062bd455ea21.jpg?versionId=wPMwZFPrms.rZaSD9Kst2lMFEwciFyKC&bust=1746044019&width=720" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block carousel-image" src="https://dbw3zep4prcju.cloudfront.net/animal/aad5480a-28bf-4c27-96cd-7f29d1b8e02c/image/b50a1594-22e1-4406-a7e5-16a93014622a.jpg?versionId=UBrw1GOFxHh_l1jrqlFBvhtz1ngMqlYw&bust=1746044019&width=720" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#images-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#images-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </section>
 </body>

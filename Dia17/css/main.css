@@ -122,8 +122,10 @@ section {
   top: 85px;
 }
 
-section h1 {
+section h1,
+#details-title {
   margin: calc(30px - 0.3vw) 0 3vmax;
+  width: 100vw;
   color: var(--bs-primary);
   font-size: 5.85vw;
   text-align: center;
@@ -203,6 +205,65 @@ small {
   cursor: pointer;
   transition-property: background-color;
   transition-duration: 0.5s;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10vw;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+#details-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#details-title strong {
+  font-size: 9vw;
+}
+
+#details-title div {
+  display: flex;
+  gap: 1vw;
+}
+
+.details-favorite, .details-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5vw;
+  height: 7.5vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 1.3vw;
+  font-size: 6vw;
+}
+
+.details-favorite {
+  border-width: 0.3vmax;
+}
+
+.carousel, .carousel-inner, .carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2vmax;
+  object-fit: cover;
 }
 
 @media (max-width: 393px) {
