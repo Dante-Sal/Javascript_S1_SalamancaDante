@@ -294,10 +294,24 @@ small {
   border: 0.01vmax solid var(--bs-dark);
 }
 
-.details-description {
+.details-description, ul {
   margin-top: calc(30px - 0.3vw);
+  width: 100%;
   color: var(--bs-dark);
   font-size: 20px;
+  text-align: justify;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: p;
+}
+
+ul {
+  align-self: flex-start;
+}
+
+.details-description a {
+  color: var(--bs-secondary);
+  text-decoration: none;
 }
 
 @media (max-width: 393px) {
