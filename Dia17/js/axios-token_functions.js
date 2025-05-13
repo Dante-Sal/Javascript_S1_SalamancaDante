@@ -14,9 +14,6 @@ export async function FETCH_ACCESS_TOKEN() {
 
     access_token = response.data.access_token;
     token_expiration = Date.now() + response.data.expires_in * 1000;
-
-    console.log('✅ Token obtenido:', access_token);
-    console.log('Vence el: ', token_expiration);
 };
 
 export async function ENSURE_VALID_TOKEN() {

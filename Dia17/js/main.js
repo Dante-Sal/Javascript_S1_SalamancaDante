@@ -4,7 +4,7 @@ import { DISPLAY_ANIMALS } from "./display_functions.js";
 
 FETCH_POPULAR_ANIMALS()
     .then(data => {
-        DISPLAY_ANIMALS(data);
+        DISPLAY_ANIMALS(data, 'popular');
 
         mq.SET_CARD_BUTTON_VALUE(mq.card_media_query.matches);
 
@@ -30,9 +30,14 @@ document.querySelector('.v-form')
         const data = Object.fromEntries(
             new FormData(e.target)
         );
+        let request_type = 'filtered';
+        if (Object.keys(data).length === 2 && data.location === '' && data.name === '' ||
+            Object.keys(data).length === 4 && data.type === '' && data.location === '' && data.name === '' && data.age === '') {
+            request_type = 'popular';
+        };
         FETCH_ANIMALS_BY_FILTER(data)
             .then(data => {
-                DISPLAY_ANIMALS(data);
+                DISPLAY_ANIMALS(data, );
 
                 mq.SET_CARD_BUTTON_VALUE(mq.card_media_query.matches);
 
@@ -59,9 +64,14 @@ document.querySelector('.h-form')
         const data = Object.fromEntries(
             new FormData(e.target)
         );
+        let request_type = 'filtered';
+        if (Object.keys(data).length === 2 && data.location === '' && data.name === '' ||
+            Object.keys(data).length === 4 && data.type === '' && data.location === '' && data.name === '' && data.age === '') {
+            request_type = 'popular';
+        };
         FETCH_ANIMALS_BY_FILTER(data)
             .then(data => {
-                DISPLAY_ANIMALS(data);
+                DISPLAY_ANIMALS(data, request_type);
 
                 mq.SET_CARD_BUTTON_VALUE(mq.card_media_query.matches);
 
