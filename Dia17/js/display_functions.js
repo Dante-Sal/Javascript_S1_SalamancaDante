@@ -10,13 +10,10 @@ export function DISPLAY_ANIMALS(data, request_type) {
   }
 
   cards_container.innerHTML = '';
-  cards_container.style.marginBottom = '8vw';
-  cards_container.style.padding = '0 8vw';
-  cards_container.style.width = '100vw';
+  cards_container.style.display = 'grid';
 
   details_container.innerHTML = '';
-  details_container.style.padding = 0;
-  details_container.style.width = 0;
+  details_container.style.display = 'none';
 
   for (let i = 0; i < data.animals.length; i++) {
     cards_container.insertAdjacentHTML('beforeend', `
@@ -58,68 +55,129 @@ export function DISPLAY_ANIMALS(data, request_type) {
 };
 
 export function DISPLAY_ANIMALS_DETAILS(data) {
+  window.scrollTo(0, 0);
+  
   title.innerHTML = ''
   cards_container.innerHTML = '';
-  cards_container.style.margin = 0;
-  cards_container.style.padding = 0;
-  cards_container.style.width = 0;
+  cards_container.style.display = 'none';
 
-  details_container.style.padding = '0 10vw';
-  details_container.style.width = '100vw';
+  details_container.innerHTML = '';
+  details_container.style.display = 'flex';
 
-  details_container.innerHTML = `
-    <h1 id="details-title">
-      <strong>Meet <span>${data.animal.name.toUpperCase()}</span>!</strong>
-      <div>
-        <button class="btn btn-outline-primary details-favorite">★</button>
-        <button class="btn btn-primary details-contact">✆</button>
+  if (data.animal.description === null) {
+    details_container.innerHTML = `
+      <h1 id="details-title">
+        <strong>Meet <span>${data.animal.name.toUpperCase()}</span>!</strong>
+        <div>
+          <button class="btn btn-outline-primary details-favorite">★</button>
+          <a class="contacts-link" href="#contacts"><button class="btn btn-primary details-contact">✆</button></a>
+        </div>
+      </h1>
+
+      <div id="images-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators"></div>
+        <div class="carousel-inner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#images-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#images-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </h1>
 
-    <div id="images-carousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators"></div>
-      <div class="carousel-inner"></div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#images-carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#images-carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+      <h2 class="h2">
+        <p>${data.animal.age} ${data.animal.species} <span>(${data.animal.gender} / ${data.animal.size})</span></p>
+        <span>${data.animal.breeds.primary}</span>
+      </h2>
 
-    <h2 class="h2">
-      <p>${data.animal.age} ${data.animal.species} <span>(${data.animal.gender} / ${data.animal.size})</span></p>
-      <span>${data.animal.breeds.primary}</span>
-    </h2>
+      <div class="hr"></div>
 
-    <div class="hr"></div>
+      <ul class="no-description-list">
+        <li>Low-pressure trial period</li>
+        <li>Rescue team support</li>
+        <li>A smooth transition for the pup</li>
+        <li>Helps us save more lives by opening foster space</li>
+      </ul>
+      <p class="details-description details-link">
+        Apply today to meet ${data.animal.name}—she’s ready to sweeten your life!<br /><br />
+        If you’re interested in scheduling a meet and greet, please fill out an adoption application at:<br /><br />
+        <a href="${data.animal.url}">${data.animal.url}</a><br /><br />
+      </p>
+      
+      <div id="contacts" class="contacts-container">
+        <h1>Contact:</h1>
+        <div class="contacts">
+          <p><span class="badge rounded-pill text-bg-success">E-mail</span> : ${data.animal.contact.email}</p>
+          <p><span class="badge rounded-pill text-bg-danger">Phone</span> : ${data.animal.contact.phone}</p>
+        </div>
+      </div>`;
+    const no_description_list = document.querySelector('.no-description-list');
+    no_description_list.style.marginTop = '2.5vmax';
+  } else {
+    details_container.innerHTML = `
+      <h1 id="details-title">
+        <strong>Meet <span>${data.animal.name.toUpperCase()}</span>!</strong>
+        <div>
+          <button class="btn btn-outline-primary details-favorite">★</button>
+          <a class="contacts-link" href="#contacts"><button class="btn btn-primary details-contact">✆</button></a>
+        </div>
+      </h1>
 
-    <p class="details-description">
-      ${data.animal.description}
-      <span class="h2">Foster-to-Adopt Available!</span>
-      Our Foster-to-Adopt program gives you a chance to bring a dog home on a trial basis before making a final
-      decision. It’s a great way to ensure the perfect match—for both you and the dog.
-      <span class="h2 details-benefits">Program Benefits:</span>
-    </p>
-    <ul>
-      <li>Low-pressure trial period</li>
-      <li>Rescue team support</li>
-      <li>A smooth transition for the pup</li>
-      <li>Helps us save more lives by opening foster space</li>
-    </ul>
-    <p class="details-description details-link">
-      Apply today to meet ${data.animal.name}—she’s ready to sweeten your life!<br /><br />
-      If you’re interested in scheduling a meet and greet, please fill out an adoption application at:<br /><br />
-      <a
-        href="${data.animal.url}">${data.animal.url}</a><br /><br />
-    </p>`;
+      <div id="images-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators"></div>
+        <div class="carousel-inner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#images-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#images-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <h2 class="h2">
+        <p>${data.animal.age} ${data.animal.species} <span>(${data.animal.gender} / ${data.animal.size})</span></p>
+        <span>${data.animal.breeds.primary}</span>
+      </h2>
+
+      <div class="hr"></div>
+
+      <p class="details-description">
+        ${data.animal.description}
+        <span class="h2">Foster-to-Adopt Available!</span>
+        Our Foster-to-Adopt program gives you a chance to bring a dog home on a trial basis before making a final
+        decision. It’s a great way to ensure the perfect match—for both you and the dog.
+        <span class="h2 details-benefits">Program Benefits:</span>
+      </p>
+      <ul>
+        <li>Low-pressure trial period</li>
+        <li>Rescue team support</li>
+        <li>A smooth transition for the pup</li>
+        <li>Helps us save more lives by opening foster space</li>
+      </ul>
+      <p class="details-description details-link">
+        Apply today to meet ${data.animal.name}—she’s ready to sweeten your life!<br /><br />
+        If you’re interested in scheduling a meet and greet, please fill out an adoption application at:<br /><br />
+        <a href="${data.animal.url}">${data.animal.url}</a><br /><br />
+      </p>
+      
+      <div id="contacts" class="contacts-container">
+        <h1>Contact:</h1>
+        <div class="contacts">
+          <p><span class="badge rounded-pill text-bg-success">E-mail</span> : ${data.animal.contact.email}</p>
+          <p><span class="badge rounded-pill text-bg-danger">Phone</span> : ${data.animal.contact.phone}</p>
+        </div>
+      </div>`;
+  };
+
   if (data.animal.photos.length === 0) {
     const carousel_indicators = document.querySelector('.carousel-indicators');
     const carousel_inner = document.querySelector('.carousel-inner');
     carousel_indicators.innerHTML = `
-      <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button class="active" type="button" data-bs-target="#images-carousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
       `;
     carousel_inner.innerHTML = `
       <div class="carousel-item active">
@@ -131,14 +189,65 @@ export function DISPLAY_ANIMALS_DETAILS(data) {
       const carousel_indicators = document.querySelector('.carousel-indicators');
       const carousel_inner = document.querySelector('.carousel-inner');
 
-      carousel_indicators.innerHTML += `
-        <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i + 1}"></button>
-        `;
-      carousel_inner.innerHTML += `
-        <div class="carousel-item active">
-          <img class="d-block carousel-image" src="${data.animal.photos[i].small}"/>
-        </div>
-      `;
+      if (i === 0) {
+        carousel_indicators.innerHTML += `
+          <button class="active" type="button" data-bs-target="#images-carousel" data-bs-slide-to="${i}" aria-current="true" aria-label="Slide ${i + 1}"></button>
+          `;
+        if (data.animal.photos[i].full != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item active">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].full}"/>
+            </div>
+            `;
+        } else if (data.animal.photos[i].large != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item active">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].large}"/>
+            </div>
+            `;
+        } else if (data.animal.photos[i].medium != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item active">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].medium}"/>
+            </div>
+            `;
+        } else if (data.animal.photos[i].small != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item active">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].small}"/>
+            </div>
+            `;
+        };
+      } else {
+        carousel_indicators.innerHTML += `
+          <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="${i}" aria-current="true" aria-label="Slide ${i + 1}"></button>
+          `;
+        if (data.animal.photos[i].full != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].full}"/>
+            </div>
+            `;
+        } else if (data.animal.photos[i].large != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].large}"/>
+            </div>
+            `;
+        } else if (data.animal.photos[i].medium != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].medium}"/>
+            </div>
+            `;
+        } else if (data.animal.photos[i].small != undefined) {
+          carousel_inner.innerHTML += `
+            <div class="carousel-item">
+              <img class="d-block carousel-image" src="${data.animal.photos[i].small}"/>
+            </div>
+            `;
+        };
+      };
     };
   };
 };

@@ -59,6 +59,10 @@ document.querySelector('.v-form')
 
                 mq.UPDATE_CARD_BUTTON_VALUE(mq.card_media_query);
                 mq.card_media_query.addEventListener('change', mq.UPDATE_CARD_BUTTON_VALUE);
+
+                document.querySelectorAll('.list-group-item').forEach(btn => {
+                    btn.addEventListener('click', FETCH_ANIMALS_DETAILS);
+                });
             });
     });
 
@@ -93,5 +97,9 @@ document.querySelector('.h-form')
 
                 mq.UPDATE_CARD_BUTTON_VALUE(mq.card_media_query);
                 mq.card_media_query.addEventListener('change', mq.UPDATE_CARD_BUTTON_VALUE);
+
+                document.querySelectorAll('.list-group-item').forEach(btn => {
+                    btn.addEventListener('click', FETCH_ANIMALS_DETAILS);
+                });
             });
     });
