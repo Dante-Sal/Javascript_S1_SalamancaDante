@@ -1,5 +1,6 @@
 export const title = document.getElementById('title');
 export const cards_container = document.querySelector('.cards-container');
+export const details_container = document.querySelector('.details-container');
 
 export function DISPLAY_ANIMALS(data, request_type) {
   if (request_type === 'filtered') {
@@ -7,7 +8,16 @@ export function DISPLAY_ANIMALS(data, request_type) {
   } else if (request_type === 'popular') {
     title.innerHTML = '<strong>PacoPets most <span>POPULAR</span> ones!</strong>'
   }
+
   cards_container.innerHTML = '';
+  cards_container.style.marginBottom = '8vw';
+  cards_container.style.padding = '0 8vw';
+  cards_container.style.width = '100vw';
+
+  details_container.innerHTML = '';
+  details_container.style.padding = 0;
+  details_container.style.width = 0;
+
   for (let i = 0; i < data.animals.length; i++) {
     cards_container.insertAdjacentHTML('beforeend', `
       <div class="card">
@@ -25,7 +35,7 @@ export function DISPLAY_ANIMALS(data, request_type) {
             <li class="list-group-item text-body-secondary"><strong>Location:</strong> ${data.animals[i].contact.address.city}, ${data.animals[i].contact.address.state}</li>
             <li class="list-group-item text-body-secondary card-published-footer"><small>Published on ${data.animals[i].published_at.slice(0, 10)}</small>
             </li>
-            <li class="list-group-item card-button">KNOW MORE ABOUT THIS PET +</li>
+            <li class="list-group-item card-button" pet-id="${data.animals[i].id}">KNOW MORE ABOUT THIS PET +</li>
           </ul>
       </div>`);
     if (data.animals[i].photos.length === 0) {
@@ -44,5 +54,91 @@ export function DISPLAY_ANIMALS(data, request_type) {
       const card_img_top_current = document.getElementById(`card-img-top--${i + 1}`);
       card_img_top_current.src = data.animals[i].photos[0].small;
     }
+  };
+};
+
+export function DISPLAY_ANIMALS_DETAILS(data) {
+  title.innerHTML = ''
+  cards_container.innerHTML = '';
+  cards_container.style.margin = 0;
+  cards_container.style.padding = 0;
+  cards_container.style.width = 0;
+
+  details_container.style.padding = '0 10vw';
+  details_container.style.width = '100vw';
+
+  details_container.innerHTML = `
+    <h1 id="details-title">
+      <strong>Meet <span>${data.animal.name.toUpperCase()}</span>!</strong>
+      <div>
+        <button class="btn btn-outline-primary details-favorite">★</button>
+        <button class="btn btn-primary details-contact">✆</button>
+      </div>
+    </h1>
+
+    <div id="images-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators"></div>
+      <div class="carousel-inner"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#images-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#images-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <h2 class="h2">
+      <p>${data.animal.age} ${data.animal.species} <span>(${data.animal.gender} / ${data.animal.size})</span></p>
+      <span>${data.animal.breeds.primary}</span>
+    </h2>
+
+    <div class="hr"></div>
+
+    <p class="details-description">
+      ${data.animal.description}
+      <span class="h2">Foster-to-Adopt Available!</span>
+      Our Foster-to-Adopt program gives you a chance to bring a dog home on a trial basis before making a final
+      decision. It’s a great way to ensure the perfect match—for both you and the dog.
+      <span class="h2 details-benefits">Program Benefits:</span>
+    </p>
+    <ul>
+      <li>Low-pressure trial period</li>
+      <li>Rescue team support</li>
+      <li>A smooth transition for the pup</li>
+      <li>Helps us save more lives by opening foster space</li>
+    </ul>
+    <p class="details-description details-link">
+      Apply today to meet ${data.animal.name}—she’s ready to sweeten your life!<br /><br />
+      If you’re interested in scheduling a meet and greet, please fill out an adoption application at:<br /><br />
+      <a
+        href="${data.animal.url}">${data.animal.url}</a><br /><br />
+    </p>`;
+  if (data.animal.photos.length === 0) {
+    const carousel_indicators = document.querySelector('.carousel-indicators');
+    const carousel_inner = document.querySelector('.carousel-inner');
+    carousel_indicators.innerHTML = `
+      <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      `;
+    carousel_inner.innerHTML = `
+      <div class="carousel-item active">
+        <img class="d-block carousel-image" src="https://mint.fiu.edu/wp-content/uploads/2021/10/image-not-available.jpg"/>
+      </div>
+      `;
+  } else {
+    for (let i = 0; i < data.animal.photos.length; i++) {
+      const carousel_indicators = document.querySelector('.carousel-indicators');
+      const carousel_inner = document.querySelector('.carousel-inner');
+
+      carousel_indicators.innerHTML += `
+        <button type="button" data-bs-target="#images-carousel" data-bs-slide-to="${i}" class="active" aria-current="true" aria-label="Slide ${i + 1}"></button>
+        `;
+      carousel_inner.innerHTML += `
+        <div class="carousel-item active">
+          <img class="d-block carousel-image" src="${data.animal.photos[i].small}"/>
+        </div>
+      `;
+    };
   };
 };

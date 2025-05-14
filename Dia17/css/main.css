@@ -140,9 +140,9 @@ section h1 span {
   justify-content: space-between;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2vmax;
-  width: 100vw;
   margin-bottom: 8vw;
   padding: 0 8vw;
+  width: 100vw;
 }
 
 .card-img-container {
@@ -294,18 +294,31 @@ small {
   border: 0.01vmax solid var(--bs-dark);
 }
 
-.details-description, ul {
-  margin-top: calc(30px - 0.3vw);
+.details-description, .details-container ul {
+  margin: calc(30px - 0.3vw) 0 0 0;
   width: 100%;
   color: var(--bs-dark);
-  font-size: 20px;
+  font-size: 1.7vmax;
   text-align: justify;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: p;
 }
 
-ul {
+.details-container ul {
+  margin: 0;
+}
+
+.details-description .h2 {
+  margin: 2.5vmax 0;
+  font-size: clamp(3.3vw, calc(60px - 1vw), 11vw);
+}
+
+.details-benefits {
+  font-size: clamp(2.6vw, calc(40px - 1vw), 9vw) !important;
+}
+
+.details-container ul {
   align-self: flex-start;
 }
 

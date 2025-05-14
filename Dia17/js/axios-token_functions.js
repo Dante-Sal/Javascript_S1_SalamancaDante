@@ -20,5 +20,6 @@ export async function ENSURE_VALID_TOKEN() {
   if (!access_token || Date.now() >= token_expiration) {
     await FETCH_ACCESS_TOKEN();
   };
+  console.log(access_token)
   return access_token;
 };
